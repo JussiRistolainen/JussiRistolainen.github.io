@@ -1,19 +1,56 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>Assets — Arctic Adler</title>
-<link rel="stylesheet" href="styles.css"></head><body>
-<header><nav>
-  <a href="/">Home</a><a href="/assets.html">Assets</a>
-  <a href="/docs-tidemesh.html">Docs</a><a href="/support.html">Support</a><a href="/privacy.html">Privacy</a>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assets — Arctic Adler</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
+</head><body>
+<header><nav class="container">
+  <a href="/">Home</a>
+  <a href="/assets.html">Assets</a>
+  <a href="/docs-tidemesh.html">Docs</a>
+  <a href="/support.html">Support</a>
+  <a href="/privacy.html">Privacy</a>
 </nav></header>
-<main>
+
+<main class="container">
   <h1>Assets</h1>
+
   <section class="card">
     <h2>TideMesh</h2>
-    <p>Dynamic buoyancy & mesh-based shoreline interactions for Unity.</p>
+    <p class="meta">Dynamic buoyancy & mesh-based shoreline interactions for Unity.</p>
     <ul>
       <li>Unity 2021.3+ • URP/HDRP</li>
       <li>One-click buoyancy presets, foam & wave scale controls</li>
     </ul>
-    <p><a class="btn" href="/docs-tidemesh.html">Documentation</a></p>
+    <p><a class="btn primary" href="/docs-tidemesh.html">Documentation</a></p>
+
+    <h3>Gallery</h3>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/slide1.png" alt="Gallery slide 1"></div>
+        <div class="swiper-slide"><img src="img/slide2.png" alt="Gallery slide 2"></div>
+        <div class="swiper-slide"><img src="img/slide3.png" alt="Gallery slide 3"></div>
+        <div class="swiper-slide"><img src="img/slide4.png" alt="Gallery slide 4"></div>
+        <div class="swiper-slide"><img src="img/slide5.png" alt="Gallery slide 5"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </section>
-</main><footer>© Arctic Adler</footer></body></html>
+</main>
+
+<footer><div class="container"><span>© Arctic Adler</span></div></footer>
+
+<script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    keyboard: true,
+  });
+</script>
+</body></html>
