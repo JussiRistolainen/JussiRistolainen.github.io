@@ -1,0 +1,11 @@
+:root { --max:900px; --pad:18px; --radius:14px; --muted:#666; }
+*{box-sizing:border-box} body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.5;margin:0}
+header{border-bottom:1px solid #eee} nav{max-width:var(--max);margin:0 auto;padding:12px var(--pad);display:flex;gap:14px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#111} nav a:hover{text-decoration:underline}
+main{max-width:var(--max);margin:0 auto;padding:32px var(--pad)}
+h1{margin:0 0 12px} .btn{display:inline-block;padding:10px 14px;border:1px solid #ddd;border-radius:var(--radius);text-decoration:none}
+.card{border:1px solid #eee;border-radius:var(--radius);padding:16px;margin:16px 0}
+label{display:block;margin:10px 0} input,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px}
+button{padding:10px 14px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer}
+footer{max-width:var(--max);margin:0 auto;padding:24px var(--pad);border-top:1px solid #eee;color:var(--muted)}
+.muted{color:var(--muted);font-size:.9em}
