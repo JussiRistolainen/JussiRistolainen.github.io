@@ -13,8 +13,11 @@ main{padding:36px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);padding:28px 0;background:var(--surface)}
 footer .container{display:flex;align-items:center;justify-content:space-between}
 h1{font-size:44px;margin:0 0 14px}
+h2{margin:24px 0 8px}
 h3{margin-top:28px;margin-bottom:8px}
 .meta{color:var(--muted);font-size:.95rem}
+ul.features{margin:8px 0 0 18px}
+ul.features li{margin:6px 0}
 /* Centered gallery wrapper */
 .gallery-wrap{display:flex;justify-content:center;margin:12px 0 24px}
 .gallery-inner{width:100%;max-width:1200px}
