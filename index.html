@@ -1,23 +1,70 @@
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arctic Adler — Unity Water & Buoyancy Tools</title>
-<meta name="description" content="TideMesh: dynamic buoyancy and shoreline interactions for Unity. Docs, support, and updates.">
+<title>Arctic Adler — TideMesh for Unity</title>
+<meta name="description" content="TideMesh: dynamic buoyancy and shoreline interactions for Unity.">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
 </head><body>
-<header><nav class="container">
-  <a href="/">Home</a>
-  <a href="/assets.html">Assets</a>
-  <a href="/docs-tidemesh.html">Docs</a>
-  <a href="/support.html">Support</a>
-  <a href="/privacy.html">Privacy</a>
-</nav></header>
-<main class="container">
-  <section class="hero">
-    <h1>Arctic Adler</h1>
-    <p>Simulation tools for Unity—dynamic water, physics, and rendering.</p>
-    <a class="btn primary" href="/assets.html">View Assets</a>
-    <a class="btn ghost" href="/docs-tidemesh.html">Read the Docs</a>
+<header>
+  <nav class="container">
+    <div class="left">
+      <a href="/">Arctic Adler</a>
+      <a href="/docs-tidemesh.html">Docs</a>
+    </div>
+    <div class="right">
+      <a href="https://discord.gg/your-invite" target="_blank" rel="noopener">Discord</a>
+      <a href="mailto:support@arcticadler.com">Email</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="container">
+    <h1>TideMesh</h1>
+    <div class="card">
+      <p class="meta">Dynamic buoyancy &amp; mesh-based shoreline interactions for Unity.</p>
+      <ul>
+        <li>Unity 2021.3+ • URP/HDRP</li>
+        <li>One-click buoyancy presets, foam &amp; wave scale controls</li>
+      </ul>
+      <a class="btn primary" href="/docs-tidemesh.html">Documentation</a>
+    </div>
+
+    <h3>About the Developer</h3>
+    <p>I’m a fifth-year Aalto University student in Technical Physics &amp; Mathematics, specializing in materials-oriented physics with a minor in machine learning and data science. I focus on simulations and optimization especially oriented towards computational fluid dynamics. I’ve built production and hobby projects in <strong>Python</strong> and <strong>C#</strong>, and I’m the creator of <strong>TideMesh</strong>.</p>
+
+    <h3>Description</h3>
+    <p><strong>TideMesh</strong> is a Drop-in ocean for Unity with <strong>one-click buoyancy</strong>, <strong>dynamic tessellation</strong>, and a <strong>camera-following tiling</strong> system for infinite water. Drop it in, press Play, and your props and boats float—no scripting required.</p>
+  </section>
+
+  <section class="container-wide">
+    <h3>Gallery</h3>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/slide1.png" alt="Gallery slide 1"></div>
+        <div class="swiper-slide"><img src="img/slide2.png" alt="Gallery slide 2"></div>
+        <div class="swiper-slide"><img src="img/slide3.png" alt="Gallery slide 3"></div>
+        <div class="swiper-slide"><img src="img/slide4.png" alt="Gallery slide 4"></div>
+        <div class="swiper-slide"><img src="img/slide5.png" alt="Gallery slide 5"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
   </section>
 </main>
-<footer><div class="container"><span>© Arctic Adler</span><span class="meta">Made with GitHub Pages</span></div></footer>
+
+<footer><div class="container"><span>© Arctic Adler</span></div></footer>
+
+<script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 12,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    keyboard: true,
+  });
+</script>
 </body></html>
