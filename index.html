@@ -7,22 +7,23 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
   <style>
-    /* --- Drop-in gallery fixes --- */
-    .swiper-slide { display:flex; }
-    .media-frame {
-      width: 100%;
-      aspect-ratio: 16 / 9;     /* consistent height across slides */
-      border-radius: 12px;
-      overflow: hidden;
-      background: #000;         /* subtle backdrop behind media */
-      border: 1px solid var(--line, rgba(255,255,255,.08));
+    /* --- Drop-in gallery & video fixes --- */
+    .swiper-slide{ display:flex; }
+    .media-frame{
+      width:100%;
+      aspect-ratio:16/9;
+      border-radius:12px;
+      overflow:hidden;
+      background:#000;
+      border:1px solid var(--line, rgba(255,255,255,.08));
     }
-    .media-frame > img,
-    .media-frame > video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;        /* fill the frame; change to 'contain' to avoid any crop */
-      display: block;
+    .media-frame>img,
+    .media-frame>video{
+      width:100%;
+      height:100%;
+      object-fit:cover; /* use 'contain' for zero-crop with thin bars */
+      display:block;
+      background:transparent;
     }
   </style>
 </head>
@@ -43,18 +44,7 @@
   <section class="container">
     <h1>TideMesh</h1>
     <h3>Description</h3>
-    <p><strong>TideMesh</strong> is a drop-in ocean for Unity with <strong>one-click buoyancy</strong>, <strong>dynamic tessellation</strong>, and a <strong>camera-following tiling</strong> system for infinite water. Drop it in, press Play, and your props and boats float—no scripting required. You can fully tune the <strong>lighting and color palette</strong> to your art direction, and pick from multiple <strong>sensible presets</strong> for quick results.</p>
-
-    <h3>Key Features</h3>
-    <ul class="features">
-      <li><strong>Premade Ocean Templates</strong> — Drop-in looks from calm to stormy with balanced scale, color, and wave behavior.</li>
-      <li><strong>One-Click Buoyancy</strong> — Floats props and boats with natural bob and tilt. Works out of the box—just press a button.</li>
-      <li><strong>Dynamic Tessellation</strong> — Adds crisp detail up close and smoothly reduces it at distance for clean horizons.</li>
-      <li><strong>FFT-Based Waves</strong> — Uses Fast Fourier Transforms for realistic surface motion with predictable performance.</li>
-      <li><strong>Smart Culling &amp; Tiling</strong> — Camera-following tiles extend the ocean to the horizon while off-screen areas are culled to minimize draw calls.</li>
-      <li><strong>Configurable Shading</strong> — Artist-friendly water &amp; lighting controls to match stylized or realistic art directions.</li>
-      <li><strong>Simple Setup</strong> — Sensible defaults get you a playable ocean in minutes; no scripting required.</li>
-    </ul>
+    <p><strong>TideMesh</strong> is a drop-in ocean for Unity with <strong>one-click buoyancy</strong>, <strong>dynamic tessellation</strong>, and a <strong>camera-following tiling</strong> system for infinite water. Drop it in, press Play, and your props and boats float—no scripting required.</p>
   </section>
 
   <section class="container-wide">
@@ -63,22 +53,23 @@
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
 
-            <!-- Video slide as index 0 -->
+            <!-- VIDEO: WebM first (for Edge/Chrome), MP4 fallback (for Safari) -->
             <div class="swiper-slide">
               <div class="media-frame">
-                <video class="gallery-video" id="tideVideo" controls playsinline preload="metadata" poster="img/slide1.png">
-                  <source src="/media/V10.mp4" type="video/mp4">
+                <video class="gallery-video" controls playsinline preload="metadata" poster="img/slide1.png">
+                  <source src="/media/V10.webm" type="video/webm">
+                  <source src="/media/V10.mp4"  type="video/mp4">
                   Your browser does not support the video tag.
                 </video>
               </div>
             </div>
 
-            <!-- Image slides -->
-            <div class="swiper-slide"><div class="media-frame"><img src="img/slide1.png" alt="Gallery slide 1"></div></div>
-            <div class="swiper-slide"><div class="media-frame"><img src="img/slide2.png" alt="Gallery slide 2"></div></div>
-            <div class="swiper-slide"><div class="media-frame"><img src="img/slide3.png" alt="Gallery slide 3"></div></div>
-            <div class="swiper-slide"><div class="media-frame"><img src="img/slide4.png" alt="Gallery slide 4"></div></div>
-            <div class="swiper-slide"><div class="media-frame"><img src="img/slide5.png" alt="Gallery slide 5"></div></div>
+            <!-- Example image slides (keep yours as-is) -->
+            <div class="swiper-slide"><div class="media-frame"><img src="img/slide1.png" alt=""></div></div>
+            <div class="swiper-slide"><div class="media-frame"><img src="img/slide2.png" alt=""></div></div>
+            <div class="swiper-slide"><div class="media-frame"><img src="img/slide3.png" alt=""></div></div>
+            <div class="swiper-slide"><div class="media-frame"><img src="img/slide4.png" alt=""></div></div>
+            <div class="swiper-slide"><div class="media-frame"><img src="img/slide5.png" alt=""></div></div>
           </div>
 
           <div class="swiper-pagination"></div>
@@ -105,16 +96,16 @@
 <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
 <script>
   const swiper = new Swiper('.mySwiper', {
-    loop: false,
-    slidesPerView: 1,
-    spaceBetween: 12,
-    autoHeight: true,  // slide height matches content
-    pagination: { el: '.swiper-pagination', clickable: true },
-    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-    keyboard: true,
-    on: {
-      slideChange: () => {
-        document.querySelectorAll('.gallery-video').forEach(v => v.pause());
+    loop:false,
+    slidesPerView:1,
+    spaceBetween:12,
+    autoHeight:true,
+    pagination:{ el:'.swiper-pagination', clickable:true },
+    navigation:{ nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev' },
+    keyboard:true,
+    on:{
+      slideChange:()=>{
+        document.querySelectorAll('.gallery-video').forEach(v=>v.pause());
       }
     }
   });
