@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
   <style>
-    /* --- Drop-in gallery & video fixes --- */
+    /* --- Gallery & video fixes --- */
     .swiper-slide{ display:flex; }
     .media-frame{
       width:100%;
@@ -21,10 +21,13 @@
     .media-frame>video{
       width:100%;
       height:100%;
-      object-fit:cover; /* use 'contain' for zero-crop with thin bars */
+      object-fit:cover; /* change to 'contain' if you prefer letterboxing with no crop */
       display:block;
       background:transparent;
     }
+    /* small spacing tweaks so list breathes */
+    .features{ margin-top:.5rem; margin-bottom:1.25rem; }
+    .features li{ margin:.2rem 0; }
   </style>
 </head>
 <body>
@@ -44,7 +47,18 @@
   <section class="container">
     <h1>TideMesh</h1>
     <h3>Description</h3>
-    <p><strong>TideMesh</strong> is a drop-in ocean for Unity with <strong>one-click buoyancy</strong>, <strong>dynamic tessellation</strong>, and a <strong>camera-following tiling</strong> system for infinite water. Drop it in, press Play, and your props and boats float—no scripting required.</p>
+    <p><strong>TideMesh</strong> is a drop-in ocean for Unity with <strong>one-click buoyancy</strong>, <strong>dynamic tessellation</strong>, and a <strong>camera-following tiling</strong> system for infinite water. Drop it in, press Play, and your props and boats float—no scripting required. You can fully tune the <strong>lighting and color palette</strong> to your art direction and pick from multiple <strong>sensible presets</strong> for quick results.</p>
+
+    <h3>Key Features</h3>
+    <ul class="features">
+      <li><strong>Premade Ocean Templates</strong> — Drop-in looks from calm to stormy with balanced scale, color, and wave behavior.</li>
+      <li><strong>One-Click Buoyancy</strong> — Floats props and boats with natural bob and tilt. Works out of the box—just press a button.</li>
+      <li><strong>Dynamic Tessellation</strong> — Adds crisp detail up close and smoothly reduces it at distance for clean horizons.</li>
+      <li><strong>FFT-Based Waves</strong> — Uses Fast Fourier Transforms for realistic surface motion with predictable performance.</li>
+      <li><strong>Smart Culling &amp; Tiling</strong> — Camera-following tiles extend the ocean to the horizon while off-screen areas are culled to minimize draw calls.</li>
+      <li><strong>Configurable Shading</strong> — Artist-friendly water &amp; lighting controls to match stylized or realistic art directions.</li>
+      <li><strong>Simple Setup</strong> — Sensible defaults get you a playable ocean in minutes; no scripting required.</li>
+    </ul>
   </section>
 
   <section class="container-wide">
@@ -52,8 +66,7 @@
       <div class="gallery-inner">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-
-            <!-- VIDEO: WebM first (for Edge/Chrome), MP4 fallback (for Safari) -->
+            <!-- Video slide first -->
             <div class="swiper-slide">
               <div class="media-frame">
                 <video class="gallery-video" controls playsinline preload="metadata" poster="img/slide1.png">
@@ -63,15 +76,13 @@
                 </video>
               </div>
             </div>
-
-            <!-- Example image slides (keep yours as-is) -->
+            <!-- Image slides -->
             <div class="swiper-slide"><div class="media-frame"><img src="img/slide1.png" alt=""></div></div>
             <div class="swiper-slide"><div class="media-frame"><img src="img/slide2.png" alt=""></div></div>
             <div class="swiper-slide"><div class="media-frame"><img src="img/slide3.png" alt=""></div></div>
             <div class="swiper-slide"><div class="media-frame"><img src="img/slide4.png" alt=""></div></div>
             <div class="swiper-slide"><div class="media-frame"><img src="img/slide5.png" alt=""></div></div>
           </div>
-
           <div class="swiper-pagination"></div>
           <div class="swiper-button-prev"></div>
           <div class="swiper-button-next"></div>
